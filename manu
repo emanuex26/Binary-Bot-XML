@@ -1,0 +1,42 @@
+<strategy>
+  <name>RSI Strategy</name>
+  <description>Strategy that buys when RSI is below 30 and sells when RSI is above 70</description>
+  <indicators>
+    <indicator>
+      <name>RSI</name>
+      <params>
+        <param name="period" value="14" />
+      </params>
+    </indicator>
+  </indicators>
+  <rules>
+    <rule>
+      <name>Buy Rule</name>
+      <description>Buy when RSI is below 30</description>
+      <conditions>
+        <condition>
+          <indicator>RSI</indicator>
+          <type>less_than</type>
+          <value>30</value>
+        </condition>
+      </conditions>
+      <actions>
+        <action>buy</action>
+      </actions>
+    </rule>
+    <rule>
+      <name>Sell Rule</name>
+      <description>Sell when RSI is above 70</description>
+      <conditions>
+        <condition>
+          <indicator>RSI</indicator>
+          <type>greater_than</type>
+          <value>70</value>
+        </condition>
+      </conditions>
+      <actions>
+        <action>sell</action>
+      </actions>
+    </rule>
+  </rules>
+</strategy>
